@@ -1,17 +1,18 @@
 [tool.poetry]
 name = "nonebot_plugin_emojimix"
-version = "0.4.1"
+version = "0.5.0"
 description = "Nonebot2 plugin for emojimix"
 authors = ["meetwq <meetwq@gmail.com>"]
 license = "MIT"
 readme = "README.md"
-homepage = "https://github.com/noneplugin/nonebot-plugin-emojimix"
-repository = "https://github.com/noneplugin/nonebot-plugin-emojimix"
+homepage = "https://github.com/LoCCai/nonebot-plugin-emojimix"
+repository = "https://github.com/LoCCai/nonebot-plugin-emojimix"
 
 [tool.poetry.dependencies]
 python = "^3.9"
 nonebot2 = "^2.3.0"
 nonebot-plugin-alconna = ">=0.38.0,<1.0.0"
+nonebot-plugin-localstore = ">=0.7.4,<1.0.0"
 httpx = ">=0.26.0,<1.0.0"
 emoji = "^2.0.0"
 
@@ -29,6 +30,9 @@ target-version = "py39"
 [tool.ruff.lint]
 select = ["E", "W", "F", "UP", "C", "T", "PYI", "PT", "Q"]
 ignore = ["E402", "C901", "UP037"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["PT009", "PT027"]
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

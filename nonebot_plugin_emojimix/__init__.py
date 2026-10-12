@@ -114,6 +114,10 @@ async def _(bot: Bot, event: Event, state: T_State, matcher: Matcher):
 
     # --- 5. 消息构建与发送 ---
 
+    if len(valid_results) == 1:
+        await UniMessage.image(raw=valid_results[0]).send()
+        await matcher.finish()
+
     # 尝试使用 OneBot V11 的合并转发
     sent_via_forward = False
     try:
